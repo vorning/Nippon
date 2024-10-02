@@ -1,0 +1,431 @@
+/* Importing Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #111;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Dark overlay for background image */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Tint kun på baggrundsbilledet */
+    z-index: 1;
+    background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgb(17, 17, 17) 100%), /* Gradienten fader til rgb(17, 17, 17) */
+    url('img/header.png'); /* Baggrundsbilledet */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: fixed; /* Gør navbaren fixed, så den følger med ved scroll */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5; /* Sørg for, at navbaren er over resten af indholdet */
+    height: 100px;
+    transition: background-color 0.4s ease; /* Tilføj overgang for baggrundsfarve */
+}
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.7); /* Tinted baggrund når der scrolles */
+    z-index: 10; /* Sørg for, at navbaren kommer foran tekst og indhold, når der scrolles */
+}
+
+/* Navigation links til venstre */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: 20px;
+}
+
+.nav-links li {
+    margin: 0 20px; /* Mere afstand mellem knapper */
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Logo centreret øverst og meget større */
+.center-logo {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* Sørg for, at logoet og knapperne er på samme linje */
+    height: 100px; /* Ens højde med navbar for alignment */
+}
+
+.center-logo img {
+    height: 100px; /* Behold størrelsen, men vi har reduceret padding */
+}
+
+.symbol-container {
+    position: absolute;
+    top: 40%; /* Juster positionen afhængig af, hvor symbolet skal placeres */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centerer symbolet */
+    z-index: 1; /* Sørg for, at symbolet er foran baggrundsbilledet, men bag teksten */
+    opacity: 0.6;
+}
+
+/* Størrelse og styling af symbolet */
+.symbol {
+    width: 500px; /* Justér størrelsen efter behov */
+    height: 500px;
+    filter: invert(40%) sepia(67%) saturate(8565%) hue-rotate(-15deg) brightness(40%) contrast(300%);
+}
+
+/* Container for sociale ikoner */
+.social-icons {
+    position: absolute;
+    top: 85%; /* Flytter ikonerne længere ned */
+    left: 70px; /* Flytter ikonerne længere ind til højre */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Mellemrum mellem ikonerne */
+    z-index: 4; /* Sørg for, at ikonerne ligger foran baggrunden men bag teksten */
+}
+
+/* Stil for hvert ikon */
+.social-icons a img {
+    width: 50px; /* Størrelse på ikonerne */
+    height: 50px;
+    padding: 10px;
+    background-color: rgba(201, 62, 62, 0.2); /* Lysere grå gennemsigtig baggrund */
+    border-radius: 0; /* Firkantet kanter */
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    filter: brightness(0) invert(1); /* Gør ikonerne hvide */
+}
+
+/* Når du hover over ikonerne */
+.social-icons a img:hover {
+    transform: scale(1.1); /* Lidt større ved hover */
+    border-color: rgba(255, 255, 255, 0.8); /* Gør rammen mindre gennemsigtig ved hover */
+    background-color: rgba(200, 200, 200, 0.3); /* Gør baggrunden lidt mindre gennemsigtig ved hover */
+}
+
+/* Lodret linje over symbolerne */
+.social-icons::before {
+    content: '';
+    position: absolute;
+    top: -250px; /* Juster for at placere den lodrette linje over ikonerne */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.5px; /* Tykkelse af linjen */
+    height: 200px; /* Længden på den lodrette linje */
+    background-color: rgba(255, 255, 255, 0.5); /* Grå gennemsigtig linje */
+}
+
+
+
+
+/* Promo tekst til højre */
+.navbar .promo {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-right: 40px;
+    display: flex;
+    align-items: center; /* Sørg for, at promo-teksten er på linje med logo og knapper */
+    height: 100px; /* Ens højde for bedre alignment */
+}
+
+/* Hvid linje under logo, knapper og promo tekst */
+.top-divider {
+    height: 1px;
+    background-color: #7f7f7f;
+    margin-top: 110px;
+    width: calc(90%);
+    position: relative;
+    left: 45%;
+    transform: translateX(-50%);
+    z-index: 3; /* Behold z-index lavere end navbar */
+    bottom: 170px;
+    clear: both;
+    transition: opacity 0.4s ease;
+}
+
+.top-divider.scrolled {
+    opacity: 0;
+    z-index: 10; /* Sørg for, at navbaren kommer foran tekst og indhold, når der scrolles */
+}
+
+
+/* Header Section */
+.main-header {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    margin-bottom: -100px;
+}
+
+.sub-heading {
+    font-size: 2.8rem;
+    color: #b30202;
+    margin-top: 0px; /* Ingen mellemrum op til toppen */
+    margin-bottom: -40px; /* Mindsker mellemrummet mellem subheading og main heading */
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300; /* Gør teksten tyndere */
+    text-align: center;
+   
+}
+
+.main-heading {
+    font-size: 13rem;
+    color: white;
+    margin-top: 0px; /* Reducér mellemrummet op til subheading */
+    margin-bottom: 5px; /* Mindsk mellemrummet til teksten nedenunder */
+    font-family: 'Bebas Neue', cursive;
+    text-align: center; /* Sørger for centreret tekst */
+}
+
+
+/* Tekstindhold overlay fjernet */
+.header-content {
+    z-index: 4; /* Højere end baggrundsbilledet */
+}
+
+/* Tekstindhold under titlen */
+.header-content p {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    text-transform: uppercase; /* Gør al tekst til caps */
+    text-align: center; /* Sørger for at teksten er centreret */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px; /* Reducér mellemrum fra hovedoverskriften */
+    max-width: 800px; /* Juster bredde for bedre linjebrud */
+}
+
+
+.header-buttons {
+    margin-top: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: opacity 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #f32f2f;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #f32f2f;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    opacity: 0.8;
+}
+
+/* Contact Form Styles */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+form input, form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+}
+
+form input:focus, form textarea:focus {
+    outline: 2px solid #ff0000;
+}
+
+button {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #cc0000;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+}
+/* Sektion for måltidskasser */
+.meal-boxes {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #111; /* Baggrundsfarven */
+    color: #fff;
+}
+
+.meal-boxes .section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    color: #b30202;
+    margin-bottom: 10px;
+    font-weight: 200;
+    padding-top: 100px;
+}
+
+/* Gør "MÅLTIDSKASSER" grå */
+.gray-text {
+    color: gray; /* Sætter farven til grå */
+}
+
+.meal-boxes .main-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    margin-bottom: 40px;
+}
+
+.boxes-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Hver boks */
+.box {
+    position: relative;
+    width: 300px;
+    height: 500px; /* Passende højde for aflange bokse */
+    overflow: hidden;
+    text-align: left;
+}
+
+/* Billede i boksen */
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+}
+
+/* Fader billede i bunden med en mørkere gradient */
+.box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px; /* Justér højden af gradienten */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%); /* Fra gennemsigtig til mørkere */
+    z-index: 2; /* Sørg for, at gradienten er over billedet, men bag teksten */
+    pointer-events: none;
+}
+
+/* Rammen som fader ud fra top til bund */
+.box::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 50%;
+    
+    /* Tegn kun rammen uden fyld */
+    border: 0.5px solid rgba(127, 127, 127, 1); /* Fast grå linje */
+    
+    /* Fader ud fra top til bund */
+    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+ 
+/* Titel (h3) inden i billedet */
+.box h3 {
+    margin-top: 100px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5rem;
+    color: #fff;
+    position: absolute;
+    bottom: 80px; /* Sørger for, at titlen er over beskrivelsen */
+    left: 20px; /* Justér for at være inde i rammen */
+    margin: 0;
+    z-index: 4; /* Sørger for, at teksten er foran rammen og gradienten */
+}
+
+/* Beskrivelse (p) inden i billedet */
+/* Beskrivelse (p) inden i billedet */
+.box p {
+    font-family: 'Outfit', sans-serif; /* Hold fonten, eller ændr som ønsket */
+    font-weight: 100; /* Gør teksten tyndere */
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.5;
+    position: absolute;
+    bottom: 40px; /* Sørger for, at beskrivelsen er tættere på bunden */
+    left: 20px; /* Justér for at være inde i rammen */
+    margin: 0;
+    width: 80%; /* Sørger for, at teksten holder sig inde i rammen */
+    z-index: 4;
+    text-align: left;
+}
+
+
+
+/* Tekstskygge for bedre synlighed */
+.box h3, .box p {
+    padding-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.box h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5rem;
+    color: #fff;
+    position: absolute;
+    bottom: 100px; /* Justér denne værdi for at rykke titlen længere op */
+    left: 20px; /* Justér for at være inde i rammen */
+    margin: 0;
+    z-index: 4; /* Sørger for, at teksten er foran rammen og gradienten */
+}
