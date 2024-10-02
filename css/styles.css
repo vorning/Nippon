@@ -11,7 +11,7 @@
 
 body {
     font-family: 'Outfit', sans-serif;
-    background-color: #111;
+    background-color: #070707;
     color: #fff;
     overflow-x: hidden;
 }
@@ -26,7 +26,7 @@ body {
     background-color: rgba(0, 0, 0, 0.6); /* Tint kun på baggrundsbilledet */
     z-index: 1;
     background-image: 
-    linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgb(17, 17, 17) 100%), /* Gradienten fader til rgb(17, 17, 17) */
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgb(7, 6, 6) 100%), /* Gradienten fader til rgb(17, 17, 17) */
     url('img/header.png'); /* Baggrundsbilledet */
 }
 
@@ -35,13 +35,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 160px;
     position: fixed; /* Gør navbaren fixed, så den følger med ved scroll */
     width: 100%;
-    top: 0;
+    top: 0px;
     left: 0;
     z-index: 5; /* Sørg for, at navbaren er over resten af indholdet */
-    height: 100px;
+    height: 130px;
     transition: background-color 0.4s ease; /* Tilføj overgang for baggrundsfarve */
 }
 
@@ -54,7 +54,7 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    margin-left: 20px;
+    font-size: 18px;
 }
 
 .nav-links li {
@@ -68,15 +68,13 @@ body {
 
 /* Logo centreret øverst og meget større */
 .center-logo {
-    position: relative;
-    margin: 0 auto;
-    display: flex;
-    align-items: center; /* Sørg for, at logoet og knapperne er på samme linje */
-    height: 100px; /* Ens højde med navbar for alignment */
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%); /* Ensures logo is perfectly centered */
 }
 
 .center-logo img {
-    height: 100px; /* Behold størrelsen, men vi har reduceret padding */
+    height: 140px; /* Behold størrelsen, men vi har reduceret padding */
 }
 
 .symbol-container {
@@ -144,25 +142,24 @@ body {
 .navbar .promo {
     font-size: 1rem;
     color: #ffffff;
-    margin-right: 40px;
     display: flex;
     align-items: center; /* Sørg for, at promo-teksten er på linje med logo og knapper */
     height: 100px; /* Ens højde for bedre alignment */
+    margin-right: 20px;
+    font-size: 18px;
 }
 
 /* Hvid linje under logo, knapper og promo tekst */
 .top-divider {
     height: 1px;
-    background-color: #7f7f7f;
-    margin-top: 110px;
-    width: calc(90%);
+    background-color: rgba(255, 255, 255, 0.5);
+    width: calc(85%);
     position: relative;
-    left: 45%;
-    transform: translateX(-50%);
     z-index: 3; /* Behold z-index lavere end navbar */
-    bottom: 170px;
+    bottom: 120px;
     clear: both;
     transition: opacity 0.4s ease;
+    border-radius: 20px;
 }
 
 .top-divider.scrolled {
@@ -228,6 +225,7 @@ body {
 
 .header-buttons {
     margin-top: 20px;
+    margin-left: 15px;
 }
 
 .btn-primary, .btn-secondary {
@@ -238,6 +236,7 @@ body {
     text-decoration: none;
     margin-right: 15px;
     transition: opacity 0.3s ease;
+    justify-content: center;
 }
 
 .btn-primary {
@@ -254,6 +253,35 @@ body {
 .btn-primary:hover, .btn-secondary:hover {
     opacity: 0.8;
 }
+
+.buttom-divider-one {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: calc(100%);
+    transform: translateX(-45%);
+    position: relative;
+    z-index: 3; /* Behold z-index lavere end navbar */
+    bottom: -260px;
+    clear: both;
+    transition: opacity 0.4s ease;
+    opacity: 40%;
+    border-radius: 20px;
+}
+
+.buttom-divider-two {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: calc(100%);
+    transform: translateX(45%);
+    position: relative;
+    z-index: 3; /* Behold z-index lavere end navbar */
+    bottom: -530px;
+    clear: both;
+    transition: opacity 0.4s ease;
+    opacity: 40%;
+    border-radius: 20px;
+}
+
 
 /* Contact Form Styles */
 .contact-container {
@@ -300,17 +328,17 @@ footer {
 .meal-boxes {
     padding: 60px 0;
     text-align: center;
-    background-color: #111; /* Baggrundsfarven */
+    background-color: 070707; /* Baggrundsfarven */
     color: #fff;
 }
 
 .meal-boxes .section-title {
     font-family: 'Outfit', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #b30202;
     margin-bottom: 10px;
     font-weight: 200;
-    padding-top: 100px;
+    padding-top: 130px;
 }
 
 /* Gør "MÅLTIDSKASSER" grå */
@@ -320,8 +348,8 @@ footer {
 
 .meal-boxes .main-title {
     font-family: 'Bebas Neue', cursive;
-    font-size: 4rem;
-    margin-bottom: 40px;
+    font-size: 5rem;
+    margin-bottom: 100px;
 }
 
 .boxes-container {
