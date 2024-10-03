@@ -12,18 +12,17 @@
     <header class="main-header" style="background-image: url('img/header.png');">
         <!-- Dark overlay only on background -->
         <div class="overlay"></div>
-          <!-- Symbol bag overskrifterne -->
-    <div class="symbol-container">
-        <img src="img/japan-symbol.png" alt="Kinesisk symbol" class="symbol">
-    </div>
+        <!-- Symbol bag overskrifterne -->
+        <div class="symbol-container">
+            <img src="img/japan-symbol.png" alt="Kinesisk symbol" class="symbol">
+        </div>
     
-    <div class="social-icons">
-        <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="img/x.png" alt="X"></a>
-    </div>
+        <div class="social-icons">
+            <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="img/x.png" alt="X"></a>
+        </div>
     
-
         <!-- Navbar and Logo -->
         <nav class="navbar">
             <!-- Navigation Buttons -->
@@ -40,9 +39,6 @@
             <div class="promo">FÅ 50% RABAT DINE FØRSTE 3 MÅLTIDSKASSER</div>
         </nav>
 
-        <!-- Horizontal line directly under the logo and buttons -->
-        <div class="top-divider"></div>
-
         <div class="header-content">
             <h2 class="sub-heading">AUTENTISKE JAPANSKE</h2>
             <h1 class="main-heading">Måltidskasser</h1>
@@ -56,94 +52,123 @@
                 <a href="#kasser" class="btn-secondary">Se Kasser</a>
             </div>
         </div>
-        <div class="buttom-divider-one"></div>
-        <div class="buttom-divider-two"></div>
     </header>
 
-    <!-- Sektion med måltidskasser under overskrifterne -->
-<section class="meal-boxes">
-    <h2 class="section-title">VORES AUTENTISKE JAPANSKE MÅLTIDSKASSER</h2>
-    <h1 class="main-title">VORES 3 <span class="gray-text">MÅLTIDSKASSER</span></h1>
-    
-    <div class="boxes-container">
-        <div class="box">
-            <img src="img/redbox.png" alt="Hana Måltidskasse">
-            <h3>Hana (花)</h3>
-            <p>betyder "blomst", symboliserer noget let og delikat.</p>
-        </div>
-        
-        <div class="box">
-            <img src="img/greenbox.png" alt="Yama Måltidskasse">
-            <h3>Yama (山)</h3>
-            <p>betyder "bjerg", symboliserer noget balanceret og solidt.</p>
-        </div>
+    <!-- Abonnements sektion -->
+    <section class="meal-boxes">
+        <h2 class="section-title">VORES AUTENTISKE JAPANSKE MÅLTIDSKASSER</h2>
+        <h1 class="main-title">VORES 3 <span class="gray-text">MÅLTIDSKASSER</span></h1>
 
-        <div class="box">
-            <img src="img/bluebox.png" alt="Sora Måltidskasse">
-            <h3>Sora (空)</h3>
-            <p>betyder "himmel", symboliserer noget stort og omfattende.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Ny sektion for madkategorier i en grå boks -->
-<section class="explore-meals">
-    <div class="buttom-divider-three"></div>
-    <div class="buttom-divider-four"></div>
-    <h2 class="section-title">AUTENTISKE JAPANSKE MÅLTIDSKASSER</h2>
-    <h1 class="main-title">UDFORSK <span class="gray-text">VORES MÅLTIDSKASSER</span></h1>
-    
-    <div class="category-boxes">
-        <div class="category-box">
-            <img src="img/uramakisushi.png" alt="Uramaki">
-            <h3>Uramaki (裏巻き寿司)</h3>
-            <p>Rolled sushi wrapped in seaweed (nori) and sliced into bite-sized pieces.</p>
-        </div>
-        <div class="category-box">
-            <img src="img/gunkansushi.png" alt="Gunkan">
-            <h3>Gunkan (軍艦巻き)</h3>
-            <p>A bowl of vinegared rice topped with various sashimi and ingredients.</p>
-        </div>
-        <div class="category-box">
-            <img src="img/temakisushi.png" alt="Temaki">
-            <h3>Temaki (手巻き寿司)</h3>
-            <p>Inside-out rolls with rice on the outside and seaweed inside.</p>
-        </div>
-        <div class="category-box">
-            <img src="img/narezushi.png" alt="Narezushi">
-            <h3>Narezushi (馴れ寿司)</h3>
-            <p>Hand-rolled sushi in a cone shape with seaweed, rice, and fillings.</p>
-        </div>
-    </div>
-    <a href="#" class="btn-explore">SE DEN FULDE MENU</a>
-</section>
-
-<!-- Sektion for Japanske Traditioner -->
-<section class="japanese-tradition">
-    <div class="tradition-container">
-        <div class="tradition-image">
-            <div class="image-overlay">
-                <img src="img/japan-tradition.png" alt="Japansk tradition billede">
+        <!-- Vælg abonnements perioder -->
+        <div class="subscription-header">
+            <h2 class="section-title">VÆLG DIN EGEN PERSONLIGE MÅLTIDSKASSE</h2>
+            <div class="toggle-slider">
+                <div class="toggle-btns">
+                    <div class="toggle-wrapper">
+                        <div class="toggle">
+                            <span class="toggle-option" id="monthly-option">Måned</span>
+                            <span class="toggle-option" id="weekly-option">Uge</span>
+                            <div class="slider"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="tradition-text">
-            <h4 class="section-small-title">HISTORIEN OM NIPPON</h4>
-            <h2 class="main-title">FRA JAPANS<br> TRADITIONER<br> <span class="gray-text">TIL DIT KØKKEN</span></h2>
-            <p>
-                Nippon blev skabt ud fra en passion for japansk madkultur og<br> ønsket om at dele autentiske smagsoplevelser med resten af<br> verden. Grundlæggerne bag Nippon har brugt år på at<br> studere det japanske køkken og dets unikke traditioner, hvor<br> hver ingrediens er omhyggeligt udvalgt og hver opskrift<br> balancerer smag, sundhed og æstetik.
-            </p>
-            <p>
-                Med en mission om at gøre japansk mad tilgængelig for alle,<br> blev Nippon født – som en løsning for dem, der elsker<br> kvalitetsmåltider, men ønsker fleksibilitet i en travl hverdag.<br> Uanset om du er ny til det japanske køkken eller allerede en<br> entusiast, er Nippon her for at give dig autentiske<br> smagsoplevelser, nemt og hurtigt.
-            </p>
+
+        <div class="plans-container">
+            <div class="plan-card" id="gakusei">
+                <h3>Gakusei (学生)</h3>
+                <div class="price">1999,-</div>
+                <ul>
+                    <li>● Lad vores kok vælge for dig.</li>
+                    <li>● For de studerende (1-2 personer).</li>
+                    <li>● Fleksibelt og overskueligt.</li>
+                </ul>
+                <button class="choose-btn">VÆLG</button>
+                <div class="learn-more">Læs mere</div>
+            </div>
+
+            <div class="plan-card" id="kazoku">
+                <h3>Kazoku (家族)</h3>
+                <div class="price">3599,-</div>
+                <ul>
+                    <li>● Lad vores kok vælge for dig.</li>
+                    <li>● Til dig og hele familien (4 personer).</li>
+                    <li>● Fleksibelt og overskueligt.</li>
+                </ul>
+                <button class="choose-btn">VÆLG</button>
+                <div class="learn-more">Læs mere</div>
+            </div>
+
+            <div class="plan-card special" id="jiyu">
+                <div class="badge">
+                    <span class="old-price">NORMALPRIS</span>
+                    <span class="normal-price">4599,-</span> <!-- Denne tekst bliver større -->
+                </div>
+                <h3>Jiyū (自由)</h3>
+                <div class="price">3999,-</div>
+                <ul>
+                    <li>● Vælg selv indhold til hver dag.</li>
+                    <li>● Vælg selv hvor mange I er.</li>
+                    <li>● Fleksibelt og overskueligt.</li>
+                    <li>● Skift din kasses indhold med 24 timers varsel.</li>
+                </ul>
+                <button class="choose-btn">VÆLG</button>
+                <div class="learn-more">Læs mere</div>
+            </div>
         </div>
-    </div>
-    <div class="buttom-divider-five"></div>
-    <div class="buttom-divider-six"></div>
-</section>
+    </section>
 
+    <!-- Ny sektion for madkategorier i en grå boks -->
+    <section class="explore-meals">
+        <h2 class="section-title">AUTENTISKE JAPANSKE MÅLTIDSKASSER</h2>
+        <h1 class="main-title">UDFORSK <span class="gray-text">VORES MÅLTIDSKASSER</span></h1>
+        
+        <div class="category-boxes">
+            <div class="category-box">
+                <img src="img/uramakisushi.png" alt="Uramaki">
+                <h3>Uramaki (裏巻き寿司)</h3>
+                <p>Rolled sushi wrapped in seaweed (nori) and sliced into bite-sized pieces.</p>
+            </div>
+            <div class="category-box">
+                <img src="img/gunkansushi.png" alt="Gunkan">
+                <h3>Gunkan (軍艦巻き)</h3>
+                <p>A bowl of vinegared rice topped with various sashimi and ingredients.</p>
+            </div>
+            <div class="category-box">
+                <img src="img/temakisushi.png" alt="Temaki">
+                <h3>Temaki (手巻き寿司)</h3>
+                <p>Inside-out rolls with rice on the outside and seaweed inside.</p>
+            </div>
+            <div class="category-box">
+                <img src="img/narezushi.png" alt="Narezushi">
+                <h3>Narezushi (馴れ寿司)</h3>
+                <p>Hand-rolled sushi in a cone shape with seaweed, rice, and fillings.</p>
+            </div>
+        </div>
+        <a href="#" class="btn-explore">SE DEN FULDE MENU</a>
+    </section>
 
-
-
+    <!-- Sektion for Japanske Traditioner -->
+    <section class="japanese-tradition">
+        <div class="tradition-container">
+            <div class="tradition-image">
+                <div class="image-overlay">
+                    <img src="img/japan-tradition.png" alt="Japansk tradition billede">
+                </div>
+            </div>
+            <div class="tradition-text">
+                <h4 class="section-small-title">HISTORIEN OM NIPPON</h4>
+                <h2 class="main-title">FRA JAPANS<br> TRADITIONER<br> <span class="gray-text">TIL DIT KØKKEN</span></h2>
+                <p>
+                    Nippon blev skabt ud fra en passion for japansk madkultur og<br> ønsket om at dele autentiske smagsoplevelser med resten af<br> verden. Grundlæggerne bag Nippon har brugt år på at<br> studere det japanske køkken og dets unikke traditioner, hvor<br> hver ingrediens er omhyggeligt udvalgt og hver opskrift<br> balancerer smag, sundhed og æstetik.
+                </p>
+                <p>
+                    Med en mission om at gøre japansk mad tilgængelig for alle,<br> blev Nippon født – som en løsning for dem, der elsker<br> kvalitetsmåltider, men ønsker fleksibilitet i en travl hverdag.<br> Uanset om du er ny til det japanske køkken eller allerede en<br> entusiast, er Nippon her for at give dig autentiske<br> smagsoplevelser, nemt og hurtigt.
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="kontakt" class="contact">
