@@ -66,8 +66,8 @@
                 <div class="toggle-btns">
                     <div class="toggle-wrapper">
                         <div class="toggle">
-                            <span class="toggle-option" id="monthly-option">Måned</span>
                             <span class="toggle-option" id="weekly-option">Uge</span>
+                            <span class="toggle-option" id="monthly-option">Måned</span>
                             <div class="slider"></div>
                         </div>
                     </div>
@@ -75,8 +75,8 @@
             </div>
         </div>
 
-        <div class="plans-container">
-            <div class="plan-card" id="gakusei">
+        <div class="plans-container background-gradient-5">
+            <div class="plan-card" id="gakusei" data-week-price="599" data-month-price="1999">
                 <h3>Gakusei (学生)</h3>
                 <div class="price">1999,-</div>
                 <ul>
@@ -88,7 +88,7 @@
                 <div class="learn-more">Læs mere</div>
             </div>
 
-            <div class="plan-card" id="kazoku">
+            <div class="plan-card" id="kazoku" data-week-price="999" data-month-price="3599">
                 <h3>Kazoku (家族)</h3>
                 <div class="price">3599,-</div>
                 <ul>
@@ -100,10 +100,10 @@
                 <div class="learn-more">Læs mere</div>
             </div>
 
-            <div class="plan-card special" id="jiyu">
+            <div class="plan-card special" id="jiyu" data-week-price="1199" data-month-price="3999">
                 <div class="badge">
                     <span class="old-price">NORMALPRIS</span>
-                    <span class="normal-price">4599,-</span> <!-- Denne tekst bliver større -->
+                    <span class="normal-price">4599,-</span> <!-- Dette er den store pris, som skal opdateres -->
                 </div>
                 <h3>Jiyū (自由)</h3>
                 <div class="price">3999,-</div>
@@ -120,7 +120,7 @@
     </section>
 
     <!-- Ny sektion for madkategorier i en grå boks -->
-    <section class="explore-meals">
+    <section class="explore-meals background-gradient-4">
         <h2 class="section-title">AUTENTISKE JAPANSKE MÅLTIDSKASSER</h2>
         <h1 class="main-title">UDFORSK <span class="gray-text">VORES MÅLTIDSKASSER</span></h1>
         
@@ -150,7 +150,7 @@
     </section>
 
     <!-- Sektion for Japanske Traditioner -->
-    <section class="japanese-tradition">
+    <section class="japanese-tradition background-gradient-2">
         <div class="tradition-container">
             <div class="tradition-image">
                 <div class="image-overlay">
@@ -170,19 +170,73 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="kontakt" class="contact">
-        <h2>Spørgsmål?</h2>
+    <section class="testimonials-section">
+        <h2 class="section-title">ANMELDELSER</h2>
+        <h1 class="main-title">VORES KUNDER <span class="gray-text">ELSKER JAPAN</span></h1>
+    
+        <!-- Slider Container -->
+        <div class="testimonials-slider">
+            <div class="testimonial">
+                <blockquote>"Nippon har virkelig løftet mit måltidvalg. Jeg elsker de autentiske opskrifter, og det føles som en ny rejse til Japan hver uge."</blockquote>
+                <div class="stars">★★★★★</div>
+                <p class="reviewer">Anna, modeentusiast</p>
+            </div>
+            <div class="testimonial">
+                <blockquote>"Jeg elsker Nippon på de travle hverdage. Børnene elsker det, og vi får sund og autentisk mad på bordet."</blockquote>
+                <div class="stars">★★★★★</div>
+                <p class="reviewer">Jonas, familiefar</p>
+            </div>
+            <div class="testimonial">
+                <blockquote>"Nippon gør det muligt at opleve gourmet på ingen tid. Så nemt at vælge mellem flere muligheder."</blockquote>
+                <div class="stars">★★★★★</div>
+                <p class="reviewer">Marie, madentusiast</p>
+            </div>
+        </div>
+    
+        <!-- Navigation Dots -->
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>    
+
+
+    <section class="contact-section background-gradient-5">
+        <h2 class="section-title">SPØRGSMÅL?</h2>
         <div class="contact-container">
-            <form action="#">
-                <input type="text" placeholder="First name" required>
-                <input type="text" placeholder="Last name" required>
-                <input type="datetime-local" required>
-                <textarea placeholder="Your message" required></textarea>
-                <button type="submit" id="submit-btn">Send Besked</button>
-            </form>
+            <!-- Virksomhedsinfo -->
+            <div class="company-info">
+                <h3>Vores information</h3>
+                <p><strong>Telefon:</strong> +45 1234 5678</p>
+                <p><strong>Email:</strong> info@voresfirma.dk</p>
+                <p><strong>Adresse:</strong> Vejnavn 123, 1000 København, Danmark</p>
+                <p><strong>Åbningstider:</strong> Mandag - Fredag 09:00 - 17:00</p>
+            </div>
+    
+            <!-- Kontaktformular -->
+            <div class="contact-form">
+                <h3>Kontakt os</h3>
+                <form id="contactForm">
+                    <label for="first-name">First name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Indtast dit fornavn" required>
+    
+                    <label for="last-name">Last name</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Indtast dit efternavn" required>
+    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Indtast din email" required>
+    
+                    <label for="message">Besked</label>
+                    <textarea id="message" name="message" placeholder="Skriv din besked her" required></textarea>
+    
+                    <button type="submit">Send Besked</button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
+            </div>
         </div>
     </section>
+    
 
     <footer>
         <p>&copy; 2024 Nippon - Autentiske Japanske Måltidskasser</p>

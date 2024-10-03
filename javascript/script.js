@@ -1,7 +1,11 @@
-// Adding functionality to the submit button
-document.getElementById('submit-btn').addEventListener('click', function (e) {
-    e.preventDefault();  // Prevent page reload
-    alert('Besked sendt!');  // Display alert on submit
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();  // Forhindrer den normale formularafsendelse
+
+    // Simulér en besked om at formularen er sendt
+    document.getElementById('formMessage').textContent = "Tak for din besked! Vi vender tilbage snarest muligt.";
+    
+    // Nulstil formular
+    this.reset();
 });
 
 // JavaScript for at ændre baggrundsfarve på navbar ved scroll
@@ -17,33 +21,57 @@ window.addEventListener('scroll', function() {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const toggleWrapper = document.querySelector('.toggle-wrapper');
+document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.querySelector('.toggle');
     const slider = document.querySelector('.slider');
     const monthlyOption = document.getElementById('monthly-option');
     const weeklyOption = document.getElementById('weekly-option');
+    const plans = document.querySelectorAll('.plan-card');
+    const badgePrice = document.querySelector('.plan-card.special .normal-price');
     
-    // Initial state - set "Måned" as active
-    let isMonthly = true;
-    monthlyOption.classList.add('active');
-    weeklyOption.classList.remove('active');
-    slider.style.left = '0%';
+    let isMonthly = false; // Starter med "Uge" som default
 
-    // Handle click on toggle
-    toggleWrapper.addEventListener('click', function () {
-        isMonthly = !isMonthly; // Toggle between states
+    function updatePrices() {
+        plans.forEach(plan => {
+            const weekPrice = plan.getAttribute('data-week-price');
+            const monthPrice = plan.getAttribute('data-month-price');
+            const priceElement = plan.querySelector('.price');
+            
+            // Update price based on whether it's monthly or weekly
+            if (isMonthly) {
+                priceElement.textContent = `${monthPrice},-`;
+            } else {
+                priceElement.textContent = `${weekPrice},-`;
+            }
+        });
 
+        // Update only the badge price for the special plan
         if (isMonthly) {
-            slider.style.left = '0%';
+            badgePrice.textContent = "4599,-"; // Monthly price for special plan
+        } else {
+            badgePrice.textContent = "1199,-"; // Weekly price for special plan
+        }
+    }
+
+    function togglePeriod() {
+        isMonthly = !isMonthly;
+        if (isMonthly) {
+            slider.style.left = "50%"; // Måned er nu til højre
             monthlyOption.classList.add('active');
             weeklyOption.classList.remove('active');
         } else {
-            slider.style.left = '50%';
+            slider.style.left = "0"; // Uge er nu til venstre
             monthlyOption.classList.remove('active');
             weeklyOption.classList.add('active');
         }
-    });
+        updatePrices();
+    }
+
+    toggle.addEventListener('click', togglePeriod);
+    updatePrices();
 });
+
+
 
 
 
@@ -57,5 +85,32 @@ document.addEventListener('DOMContentLoaded', function () {
             card.classList.add('selected'); // Tilføj 'selected' til det valgte kort
         });
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    let currentIndex = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    const dots = document.querySelectorAll('.slider-dots .dot');
+
+    function showTestimonial(index) {
+        testimonials.forEach((testimonial, i) => {
+            testimonial.style.transform = `translateX(-${index * 100}%)`;
+            testimonial.classList.toggle('active', i === index);
+            dots[i].classList.toggle('active', i === index);
+        });
+    }
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            currentIndex = i;
+            showTestimonial(currentIndex);
+        });
+    });
+
+    // Auto-slide every 5 seconds
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        showTestimonial(currentIndex);
+    }, 5000);
 });
 

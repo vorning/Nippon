@@ -26,7 +26,7 @@ body {
     background-color: rgba(0, 0, 0, 0.6); /* Tint kun på baggrundsbilledet */
     z-index: 1;
     background-image: 
-    linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgb(7, 6, 6) 100%), /* Gradienten fader til rgb(17, 17, 17) */
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgb(7, 6, 6) 80%), /* Gradienten fader til rgb(17, 17, 17) */
     url('img/header.png'); /* Baggrundsbilledet */
 }
 
@@ -343,40 +343,98 @@ body {
 
 
 
-/* Contact Form Styles */
+/* Generel styling */
+.contact-section {
+    padding: 50px;
+    background-color: #1d1d1d;
+    color: #fff;
+    text-align: center;
+}
+
 .contact-container {
     display: flex;
-    justify-content: center;
-    padding: 50px;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-form input, form textarea {
-    display: block;
-    width: 100%;
+.company-info, .contact-form {
+    background-color: #2b2b2b;
+    padding: 30px;
+    border-radius: 10px;
+    width: 45%;
+    text-align: left;
+}
+
+/* Stil for overskrifter */
+.contact-section h2, .company-info h3, .contact-form h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: #f32f2f;
+}
+
+/* Kontaktinfo */
+.company-info p {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
     margin-bottom: 15px;
-    padding: 15px;
-    background-color: #333;
-    color: #fff;
-    border: none;
+    color: #ccc;
 }
 
-form input:focus, form textarea:focus {
-    outline: 2px solid #ff0000;
+.company-info p strong {
+    color: #fff;
 }
 
-button {
-    background-color: #ff0000;
-    color: #fff;
-    padding: 15px;
+/* Kontaktformular */
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ccc;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+}
+
+.contact-form input, .contact-form textarea {
     width: 100%;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
 }
 
-button:hover {
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: #f32f2f;
+}
+
+.contact-form button {
+    background-color: #f32f2f;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.2rem;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.contact-form button:hover {
     background-color: #cc0000;
 }
+
+/* Besked når formularen er sendt */
+.form-message {
+    margin-top: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    color: #f32f2f;
+}
+
 
 /* Footer */
 footer {
@@ -384,17 +442,7 @@ footer {
     padding: 20px;
     background-color: #000;
 }
-/* Sektion for måltidskasser */
-.meal-boxes {
-    margin: 150px auto;
-    position: relative;
-    padding: 60px 40px;
-    max-width: 1600px;
-    text-align: center;
-    color: #fff;
-    background: linear-gradient(to bottom, rgba(7, 7, 7, 0) 0%, #1d1d1d 20%, #1d1d1d 80%, rgba(7, 7, 7, 0) 100%);
-    
-}
+
 
 .meal-boxes .section-title {
     font-family: 'Outfit', sans-serif;
@@ -525,14 +573,12 @@ footer {
 /* Sektion for at udforske måltidskasser */
 .explore-meals {
     margin: 200px auto;
+    margin-top: -100px;
     position: relative;
     padding: 60px 40px;
-    max-width: 1600px;
     text-align: center;
     color: #fff;
     margin-bottom: 100px;
-    background: linear-gradient(to bottom, rgba(7, 7, 7, 0) 0%, #1d1d1d 20%, #1d1d1d 90%, rgba(7, 7, 7, 0) 100%);
-    
 }
 
 
@@ -614,7 +660,6 @@ footer {
 /* Japanske Traditioner Sektion */
 /* Japanske Traditioner Sektion */
 .japanese-tradition {
-    background: linear-gradient(to bottom, rgba(7, 7, 7, 0) 0%, #1d1d1d 20%, #1d1d1d 90%, rgba(7, 7, 7, 0) 100%);
     padding: 60px 0;
     color: #fff;
 }
@@ -674,11 +719,9 @@ footer {
 /* Plans Section */
 .meal-boxes {
     margin: 150px auto;
-    padding: 60px 40px;
-    max-width: 1600px;
+    padding-bottom: 70px;
     text-align: center;
     color: #fff;
-    background: linear-gradient(to bottom, rgba(7, 7, 7, 0) 0%, #1d1d1d 20%, #1d1d1d 80%);
 }
 
 .section-title {
@@ -701,19 +744,10 @@ footer {
 
 body {
     font-family: 'Outfit', sans-serif;
-    background-color: #070707;
+    background-color: rgb(7, 6, 6);
     color: #fff;
 }
 
-/* Plans Section */
-.meal-boxes {
-    margin: 150px auto;
-    padding: 60px 40px;
-    max-width: 1600px;
-    text-align: center;
-    color: #fff;
-    background: linear-gradient(to bottom, rgba(7, 7, 7, 0) 0%, #1d1d1d 20%, #1d1d1d 80%);
-}
 
 .section-title {
     font-size: 1.4rem;
@@ -728,7 +762,7 @@ body {
 
 /* Toggle Buttons */
 .toggle-wrapper {
-    width: 140px;
+    width: 180px;
     height: 40px;
     position: relative;
     margin: 20px auto;
@@ -741,16 +775,17 @@ body {
 .toggle-option {
     flex: 1;
     text-align: center;
-    line-height: 40px;
+    line-height: 40px; /* Matcher knaphøjden */
     font-size: 0.9rem;
+    font-family: 'Outfit', sans-serif;
     color: white;
-    cursor: pointer;
     z-index: 1;
-    position: absolute;
-    width: 50%;
+    position: relative;
+    padding: 0 25px; /* Giver lidt plads til teksten */
     transition: opacity 0.3s ease;
     transition: font-weight 0.3s ease; /* Tilføj overgang for font-vægt */
 }
+
 
 /* For selected state */
 .toggle .active {
@@ -769,14 +804,13 @@ body {
 .slider {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0; /* Start ved "Uge" */
     width: 50%;
     height: 100%;
     background-color: #f32f2f;
     border-radius: 20px;
     transition: all 0.3s ease;
     z-index: 0;
-    
 }
 
 
@@ -800,7 +834,7 @@ body {
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
     position: relative;
     cursor: pointer;
-    border: 2px solid transparent; /* Tilføj en border-transition */
+    border: 2px solid #747474; /* Tilføj en hvid border for at vise valg */
 }
 
 .plan-card:hover {
@@ -812,7 +846,7 @@ body {
 .plan-card.selected {
     transform: scale(1.1); /* Lidt større når valgt */
     background-color: #564f4f; /* Skift farve ved valg */
-    box-shadow: 0 0 20px rgba(243, 47, 47, 0.5); /* Glød effekt */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glød effekt */
     border: 2px solid #fff; /* Tilføj en hvid border for at vise valg */
     transition: all 0.4s ease; /* Gør overgangen glat */
 }
@@ -824,22 +858,30 @@ body {
     height: 450px; /* Ens højde på alle bokse */
 }
 
+
 .plan-card.special {
-    background-color: #fd2e2e; /* Rød baggrund for speciel boks */
-    color: #000;
-    border: 2px solid transparent;
+    background-color: #e01a1a; /* Rød baggrund for speciel boks */
+    color: #ffffff;
+    border: 2px solid #747474; /* Tilføj en hvid border for at vise valg */
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Overgange for animationer */
 
 }
 
-.plan-card.special.selected {
+.plan-card.special:hover {
+    background-color: #fd2e2e; /* Mørkere rød nuance ved valg */
+    transform: scale(1.05); /* Zoom lidt ind ved hover */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
-    background-color: #f43c3c; /* Mørkere rød nuance ved valg */
-    transform: scale(1.15); /* Gør denne lidt større end de andre ved valg */
+
+.plan-card.special.selected {
+    transform: scale(1.1); /* Gør denne lidt større end de andre ved valg */
+    background-color: #fd2e2e; /* Mørkere rød nuance ved valg */
     box-shadow: 0 0 80px rgba(255, 0, 0, 0.8); /* Tilføj en kraftigere glød */
     border: 2px solid #fff; /* Hvid border for den specielle plan */
     transition: all 0.4s ease;
 }
+
 
 .plan-card h3 {
     font-size: 1.8rem;
@@ -848,22 +890,26 @@ body {
 }
 
 .plan-card.special h3 {
-    color: #000;
+    color: #2b2b2b;
 }
 
-.plan-card.special ul {
-    margin-top: 10px;
+.plan-card ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    padding-left: 20px;
 }
 
 /* Ens justering af prisen */
 .plan-card .price {
-    font-size: 3rem;
-    margin-top: 20px; /* Ens justering for alle */
     font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    margin: 20px 0;
+    color: #f32f2f;
+    height: 60px; /* Tilføj en fast højde */
 }
 
 .plan-card.special .price {
-    color: #000;
+    color: #2b2b2b;
     margin-top: 20px;
 }
 
@@ -872,7 +918,7 @@ body {
     top: -20px; /* Juster topplaceringen af badgen */
     right: -20px; /* Juster højre placeringen */
     background-color: #fff;
-    color: #f32f2f;
+    color: #ff0000;
     padding: 15px 20px; /* Gør badgen større */
     border-radius: 50px; /* Oval form */
     font-size: 1rem; /* Justér tekststørrelse */
@@ -926,22 +972,16 @@ body {
     border-color: #ccc; /* Lysere border ved hover */
 }
 
-.plan-card.special:hover {
-    background-color: #f43c3c; /* Mørkere rød nuance ved valg */
-    transform: scale(1.1); /* Zoom lidt ind ved hover */
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
 
 .plan-card.special .choose-btn {
-    margin-top: -2px;
-    background-color: transparent; /* Gennemsigtig baggrund */
-    color: #000; /* Sort tekst for den specielle */
-    border: 2px solid #000; /* Sort border for den specielle */
+    margin-top: -18px;
+    background-color: transparent;
+    border: 2px solid #ffffff; /* Sort border for den specielle */
 }
 
 .plan-card.special .choose-btn:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Let grå nuance ved hover */
-    border-color: #141414; /* Mørkere grå border ved hover */
+    background-color: rgba(32, 30, 30, 0.1); /* Lysere nuance ved hover */
+    border-color: #e4e1e1; /* Lysere border ved hover */
 }
 
 .learn-more {
@@ -957,7 +997,7 @@ body {
 }
 
 .plan-card.special .learn-more {
-    color: #000;
+    color: #ffffff;
 }
 
 /* Justering af badges og learn-more */
@@ -984,3 +1024,145 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     border: 2px solid;
 }
+
+
+.background-gradient-1 {
+    background: linear-gradient(
+        to bottom,
+        rgba(7, 6, 6, 0) 0%,          /* Gennemsigtig start */
+        rgba(50, 50, 50, 0.3) 30%,    /* Lys grå nuance længere nede */
+        rgba(50, 50, 50, 0.3) 70%,    /* Samme grå i midten */
+        rgba(7, 6, 6, 0) 100%         /* Gennemsigtig slutning, fader til body-farven */
+    );
+}
+
+
+.background-gradient-2 {
+    background: linear-gradient(
+        to bottom,
+        rgba(7, 6, 6, 0) 0%,         /* Start helt gennemsigtig */
+        rgba(80, 80, 80, 0.2) 20%,   /* Lys grå nuance */
+        rgba(50, 50, 50, 0.4) 50%,   /* Grå i midten */
+        rgba(80, 80, 80, 0.2) 80%,   /* Lysere grå på vej ud */
+        rgba(7, 6, 6, 0) 100%        /* Slut i gennemsigtig, der fader helt ind i body-farven */
+    );
+}
+
+
+
+.background-gradient-3 {
+    background: linear-gradient(
+        to bottom,
+        rgba(7, 6, 6, 0) 0%,          /* Start gennemsigtig */
+        rgba(70, 70, 70, 0.2) 25%,    /* Svag grå nuance på toppen */
+        rgba(90, 90, 90, 0.3) 50%,    /* Grå midte */
+        rgba(70, 70, 70, 0.2) 75%,    /* Svag grå i bunden */
+        rgba(7, 6, 6, 0) 100%         /* Gennemsigtig slutning */
+    );
+}
+
+
+
+.background-gradient-4 {
+    background: linear-gradient(
+        to bottom,
+        rgba(7, 6, 6, 0) 0%,         /* Start gennemsigtig */
+        rgba(60, 60, 60, 0.3) 20%,   /* Lys grå nuance */
+        rgba(100, 100, 100, 0.5) 50%, /* Grå i midten */
+        rgba(60, 60, 60, 0.3) 80%,   /* Fader tilbage til lys grå */
+        rgba(7, 6, 6, 0) 100%        /* Slut i gennemsigtig */
+    );
+}
+
+.background-gradient-5 {
+    background: linear-gradient(
+        to bottom,
+        rgba(7, 6, 6, 0) 0%,          /* Start gennemsigtig */
+        rgba(70, 70, 70, 0.2) 10%,    /* Lys grå nuance */
+        rgba(100, 100, 100, 0.3) 50%, /* Grå midte */
+        rgba(70, 70, 70, 0.2) 90%,    /* Fader ud til lys grå */
+        rgba(7, 6, 6, 0) 100%         /* Slut i gennemsigtig */
+    );
+}
+
+/* Section title styling */
+.testimonials-section {
+    text-align: center;
+    padding: 50px 20px;
+    color: #fff;
+}
+
+.testimonials-section h1 {
+    margin-bottom: 30px;
+}
+
+/* Testimonial slider */
+.testimonials-slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    opacity: 0.5; /* Light fading for non-active slides */
+    text-align: center;
+    padding: 20px;
+}
+
+.testimonial.active {
+    opacity: 1; /* Full opacity for the active testimonial */
+}
+
+.testimonial blockquote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.stars {
+    font-size: 1.5rem;
+    color: #f5a623; /* Star color */
+}
+
+.reviewer {
+    font-weight: bold;
+    color: #ccc;
+    font-size: 1rem;
+}
+
+/* Slider dots */
+.slider-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.slider-dots .dot {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-dots .dot.active {
+    background-color: #f32f2f;
+}
+
+/* Highlight active testimonial */
+.testimonial.active {
+    transform: scale(1.05); /* Make active slide stand out */
+    opacity: 1; /* Full opacity */
+}
+
+
+
+
+
