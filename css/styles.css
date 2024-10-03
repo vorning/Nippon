@@ -57,6 +57,14 @@ body {
     font-size: 18px;
 }
 
+.nav-links a {
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
 .nav-links li {
     margin: 0 20px; /* Mere afstand mellem knapper */
 }
@@ -83,14 +91,13 @@ body {
     left: 50%;
     transform: translate(-50%, -50%); /* Centerer symbolet */
     z-index: 1; /* Sørg for, at symbolet er foran baggrundsbilledet, men bag teksten */
-    opacity: 0.6;
+    opacity: 0.1;
 }
 
 /* Størrelse og styling af symbolet */
 .symbol {
     width: 500px; /* Justér størrelsen efter behov */
     height: 500px;
-    filter: invert(40%) sepia(67%) saturate(8565%) hue-rotate(-15deg) brightness(40%) contrast(300%);
 }
 
 /* Container for sociale ikoner */
@@ -110,16 +117,16 @@ body {
     width: 50px; /* Størrelse på ikonerne */
     height: 50px;
     padding: 10px;
-    background-color: rgba(201, 62, 62, 0.2); /* Lysere grå gennemsigtig baggrund */
+    background-color: rgba(114, 20, 20, 0.2); /* Lysere grå gennemsigtig baggrund */
     border-radius: 0; /* Firkantet kanter */
-    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
     filter: brightness(0) invert(1); /* Gør ikonerne hvide */
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Når du hover over ikonerne */
 .social-icons a img:hover {
     transform: scale(1.1); /* Lidt større ved hover */
-    border-color: rgba(255, 255, 255, 0.8); /* Gør rammen mindre gennemsigtig ved hover */
+    border-color: rgba(92, 30, 30, 0.8); /* Gør rammen mindre gennemsigtig ved hover */
     background-color: rgba(200, 200, 200, 0.3); /* Gør baggrunden lidt mindre gennemsigtig ved hover */
 }
 
@@ -133,6 +140,7 @@ body {
     width: 0.5px; /* Tykkelse af linjen */
     height: 200px; /* Længden på den lodrette linje */
     background-color: rgba(255, 255, 255, 0.5); /* Grå gennemsigtig linje */
+    
 }
 
 
@@ -261,7 +269,7 @@ body {
     transform: translateX(-45%);
     position: relative;
     z-index: 3; /* Behold z-index lavere end navbar */
-    bottom: -260px;
+    bottom: -265px;
     clear: both;
     transition: opacity 0.4s ease;
     opacity: 40%;
@@ -281,6 +289,58 @@ body {
     opacity: 40%;
     border-radius: 20px;
 }
+
+.buttom-divider-three {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: calc(61%);
+    transform: translateX(69%);
+    position: relative;
+    bottom: 15px;
+    clear: both;
+    transition: opacity 0.4s ease;
+    opacity: 40%;
+    border-radius: 20px;
+}
+
+.buttom-divider-four {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: calc(61%);
+    transform: translateX(-5%);
+    position: relative;
+    bottom: -265px;
+    clear: both;
+    transition: opacity 0.4s ease;
+    opacity: 40%;
+    border-radius: 20px;
+}
+
+.buttom-divider-five {
+    content: '';
+    position: absolute;
+    left: 15.3%;
+    transform: translateX(-50%);
+    bottom: -2950px;
+    width: 1px;
+    height: 850px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.buttom-divider-six {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: calc(55%);
+    transform: translateX(-5%);
+    position: relative;
+    bottom: 880px;
+    clear: both;
+    transition: opacity 0.4s ease;
+    opacity: 40%;
+    border-radius: 20px;
+}
+
+
 
 
 /* Contact Form Styles */
@@ -343,7 +403,7 @@ footer {
 
 /* Gør "MÅLTIDSKASSER" grå */
 .gray-text {
-    color: gray; /* Sætter farven til grå */
+    color: rgb(167, 165, 165); /* Sætter farven til grå */
 }
 
 .meal-boxes .main-title {
@@ -365,6 +425,12 @@ footer {
     height: 500px; /* Passende højde for aflange bokse */
     overflow: hidden;
     text-align: left;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+}
+
+.box:hover {
+    transform: scale(1.05); /* Lidt zoom ved hover */
 }
 
 /* Billede i boksen */
@@ -385,7 +451,6 @@ footer {
     right: 0;
     height: 100px; /* Justér højden af gradienten */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%); /* Fra gennemsigtig til mørkere */
-    z-index: 2; /* Sørg for, at gradienten er over billedet, men bag teksten */
     pointer-events: none;
 }
 
@@ -397,9 +462,8 @@ footer {
     left: 15px;
     right: 15px;
     bottom: 15px;
-    z-index: 3;
     pointer-events: none;
-    opacity: 50%;
+    opacity: 20%;
     
     /* Tegn kun rammen uden fyld */
     border: 0.5px solid rgba(127, 127, 127, 1); /* Fast grå linje */
@@ -419,7 +483,6 @@ footer {
     bottom: 80px; /* Sørger for, at titlen er over beskrivelsen */
     left: 20px; /* Justér for at være inde i rammen */
     margin: 0;
-    z-index: 4; /* Sørger for, at teksten er foran rammen og gradienten */
 }
 
 /* Beskrivelse (p) inden i billedet */
@@ -435,7 +498,6 @@ footer {
     left: 20px; /* Justér for at være inde i rammen */
     margin: 0;
     width: 80%; /* Sørger for, at teksten holder sig inde i rammen */
-    z-index: 4;
     text-align: left;
 }
 
@@ -455,5 +517,151 @@ footer {
     bottom: 100px; /* Justér denne værdi for at rykke titlen længere op */
     left: 20px; /* Justér for at være inde i rammen */
     margin: 0;
-    z-index: 4; /* Sørger for, at teksten er foran rammen og gradienten */
+}
+
+/* Sektion for at udforske måltidskasser */
+.explore-meals {
+    margin: 200px auto;
+    position: relative;
+    background-color: #1d1d1d; /* Grå baggrund */
+    padding: 60px 40px; /* Tilføjer polstring rundt om sektionen */
+    width: 1400px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 100px;
+}
+
+/* Brug af eksisterende stilarter til titler */
+.explore-meals .section-title {
+    margin-top: 70px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    color: #b30202;
+    margin-bottom: 10px;
+    font-weight: 200;
+}
+
+.explore-meals .main-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    margin-bottom: 120px;
+}
+
+/* Produktboksene */
+.category-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Tillader at boksene kan wrappe på mindre skærme */
+}
+
+.category-box {
+    background-color: #070707;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px; /* Fast bredde */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.category-box img {
+    width: 100%;
+    border-radius: 10px;
+    height: 150px; /* Ens højde på billederne */
+    object-fit: cover; /* Sørger for at billedet passer i boksen */
+}
+
+.category-box h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: #fff;
+}
+
+.category-box p {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.category-box:hover {
+    transform: scale(1.05); /* Lidt zoom ved hover */
+}
+
+/* Knappen nederst i sektionen */
+.explore-meals .btn-explore {
+    display: inline-block;
+    margin-top: 70px;
+    padding: 15px 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.explore-meals .btn-explore:hover {
+    opacity: 0.8;
+}
+
+/* Japanske Traditioner Sektion */
+/* Japanske Traditioner Sektion */
+.japanese-tradition {
+    background: linear-gradient(to bottom, #1d1d1d 0%, #070707 100%); /* Gradient fra grå til mørk grå */
+    padding: 60px 0;
+    color: #fff;
+}
+
+.tradition-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    margin-top: 70px;
+    margin-bottom: 200px;
+}
+
+.tradition-image {
+    flex: 1;
+}
+
+.tradition-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.tradition-text {
+    flex: 1;
+    padding-left: 40px;
+}
+
+.section-small-title {
+    margin-top: 70px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    color: #b30202;
+    margin-bottom: 10px;
+    font-weight: 200;
+}
+
+.main-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.tradition-text p {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
 }
