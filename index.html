@@ -38,6 +38,7 @@
             <!-- Promo Text on the right -->
             <div class="promo">FÅ 50% RABAT DINE FØRSTE 3 MÅLTIDSKASSER</div>
         </nav>
+        
 
         <div class="header-content">
             <h2 class="sub-heading">AUTENTISKE JAPANSKE</h2>
@@ -52,7 +53,37 @@
                 <a href="#kasser" class="btn-secondary">Se Kasser</a>
             </div>
         </div>
+       
+        </nav>
     </header>
+
+     <!-- Modal (Whitebox) for kurv -->
+     <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Din Bestilling</h2>
+
+            <!-- Flex container til venstre og højre sektion -->
+            <div class="modal-body">
+                <!-- Venstre felt -->
+                <div class="modal-left">
+                    <h3 id="cartTitle">Måltidskasse</h3>
+                    <p id="cartDetails">Indhold:</p>
+                </div>
+
+                <!-- Højre felt -->
+                <div class="modal-right">
+                    <h2>Pris i alt</h2>
+                    <p id="cartPrice" class="price-text">0,-</p>
+                </div>
+            </div>
+
+            <!-- Fortsæt-knappen under kolonnerne -->
+            <div class="modal-footer">
+                <button id="confirmOrder" class="confirm-btn">Fortsæt bestilling</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Abonnements sektion -->
     <section class="meal-boxes">
@@ -87,6 +118,7 @@
                 <button class="choose-btn">VÆLG</button>
                 <div class="learn-more">Læs mere</div>
             </div>
+            
 
             <div class="plan-card" id="kazoku" data-week-price="999" data-month-price="3599">
                 <h3>Kazoku (家族)</h3>
@@ -118,6 +150,60 @@
             </div>
         </div>
     </section>
+
+    <!-- Skjulte beskrivelser (centralt opbevaret) -->
+    </section>
+        <div id="hidden-descriptions" style="display: none;">
+        <div id="desc-gakusei">
+            <ul>
+                <li>● Frisk fisk fra Japan.</li>
+                <li>● Traditionelle japanske retter.</li>
+                <li>● Inkluderer matcha-pulver.</li>
+                <li>● Opskrifter udviklet af kokke.</li>
+                <li>● Veganske alternativer.</li>
+                <li>● Håndlavede nudler.</li>
+                <li>● Inkluderer fermenterede sojaprodukter.</li>
+                <li>● Tilpasset efter kostbehov.</li>
+                <li>● Perfekt til travle hverdage.</li>
+            </ul>
+        </div>
+        <div id="desc-kazoku">
+            <ul>
+                <li>● Perfekt til familier (4 personer).</li>
+                <li>● Inkluderer sushi-ris og nori-blade.</li>
+                <li>● Opskrifter til hurtige familie-måltider.</li>
+                <li>● Familievenlige snacks fra Japan.</li>
+                <li>● Frisk fisk og skaldyr.</li>
+                <li>● Daglige frokost- og middagspakker.</li>
+                <li>● Let at forberede retter.</li>
+                <li>● Inkluderer dessertopsatser.</li>
+                <li>● Skift indholdet hver uge.</li>
+            </ul>
+        </div>
+        <div id="desc-jiyu">
+            <ul>
+                <li>● Friske skaldyr og sushi-kits.</li>
+                <li>● Flere plantebaserede måltider.</li>
+                <li>● Fermenterede ingredienser.</li>
+                <li>● Håndlavede saucer og dips.</li>
+                <li>● Eksklusiv adgang til premium produkter.</li>
+                <li>● Tilpasset hverdagens behov.</li>
+                <li>● Mulighed for at ændre retter med kort varsel.</li>
+                <li>● Komplet opskriftsguide.</li>
+                <li>● Økologiske og bæredygtige produkter.</li>
+                <li>● Premium japanske desserter.</li>
+            </ul>
+        </div>
+    </div>
+    </section>
+
+
+
+     <!-- Knappen "Videre til bestilling" -->
+     <div class="continue-btn-container">
+        <button class="continue-btn">Videre til bestilling</button>
+    </div>
+</section>
 
     <!-- Ny sektion for madkategorier i en grå boks -->
     <section class="explore-meals background-gradient-4">
@@ -242,8 +328,9 @@
         <p>&copy; 2024 Nippon - Autentiske Japanske Måltidskasser</p>
     </footer>
 
-    <script src="javascript/script.js"></script>
-
+    <script src="javascript/modal.js"></script>
+  
+</body>
 <!-- Ekstra knapper  -->
 <div class="theme-container">
     <div class="theme-text">
@@ -252,16 +339,13 @@
     </div>
 <div id="themeSun" class="sun"></div>
 
-<button id="tilToppenKnappen" style="display:none;">
+<button id="tilToppenKnappen" style="display:show;">
     &#94; <!-- Unicode for pil op -->
   </button>
 
- 
+  <script src="javascript/script.js"></script>
 
   <script src="javascript/til-toppen.js"></script>
 
   <script src="javascript/sol.js"></script>
-  
-  
-</body>
 </html>
