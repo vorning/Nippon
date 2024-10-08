@@ -1,6 +1,7 @@
 /* Importing Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
 /* General Styles */
 * {
@@ -83,6 +84,8 @@ body {
 
 .center-logo img {
     height: 140px; /* Behold størrelsen, men vi har reduceret padding */
+    filter: none; /* Ingen filter, hvidt logo vises normalt */
+
 }
 
 .symbol-container {
@@ -770,6 +773,8 @@ body {
     border-radius: 20px;
     overflow: hidden;
     border: 2px solid #f32f2f;
+    cursor: pointer;
+    
 }
 
 .toggle-option {
@@ -1162,7 +1167,234 @@ body {
     opacity: 1; /* Full opacity */
 }
 
+/* Tilbage til toppen-knap */
+#tilToppenKnappen {
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+    z-index: 2; /* Sørg for, at knappen er over overlayet */
+    width: 50px;
+    height: 50px;
+    border: 2px solid red;
+    background-color: transparent;
+    color: red;
+    font-size: 36px;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 58px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  #tilToppenKnappen:hover {
+    background-color: rgba(255, 0, 0, 0.2); /* Hover-effekt */
+  }
+  
+  body {
+    background-color: #1a1a1a;
+    color: white;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  
+  /* Lyst tema */
+  body.light-theme {
+    background-color: #f0f0f0;
+    color: black;
+  }
 
+/* Standard (mørkt tema) */
+body {
+    background-color: #1a1a1a;
+    color: white;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  
+  /* Lyst tema */
+  body.light-theme {
+    background-color: #f0f0f0;
+    color: black;
+  }
+  
+  /* Solen som knap */
+  .sun {
+  position: fixed;
+  bottom: -40px;
+  right: 30px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+  cursor: pointer;
+  transition: bottom 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+  z-index: 2; /* Sørg for, at solen er over overlayet */
+}
+  
+  /* Når vi skifter til lyst tema */
+  body.light-theme .sun {
+    bottom: 20px; /* Solen stiger op */
+    background-color: yellow; /* Bliver gul som solen */
+    box-shadow: 0 0 50px rgba(255, 223, 0, 0.7); /* Gul sol-glød */
+  }
+  
+  /* Hover-effekt (valgfri) */
+  .sun:hover {
+    box-shadow: 0 0 60px rgba(255, 223, 0, 0.8); /* Ekstra glød ved hover */
+  }
+  
+  body.light-theme h1, 
+  body.light-theme h2, 
+body.light-theme h3, 
+body.light-theme h4, 
+body.light-theme h5, 
+body.light-theme h6 
+{
+  color: #f32f2f; /* Sort farve til overskrifter i lyst tema */
+}
+  
+/* Lyst tema - Skift gradienten */
+@keyframes overlayGradientToLight {
+    from {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgb(7, 6, 6) 80%), url('img/header.png'); /* Mørk gradient */
+    }
+    to {
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.527) 5%, rgba(255, 255, 255, 0.8) 80%), url('img/header.png'); /* Lys gradient */
+    }
+  }
+  
+  /* Skift tilbage til mørk gradient */
+  @keyframes overlayGradientToDark {
+    from {
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0.8) 80%), url('img/header.png'); /* Lys gradient */
+    }
+    to {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgb(7, 6, 6) 80%), url('img/header.png'); /* Mørk gradient */
+    }
+  }
+  
+  /* Lyst tema aktiveres */
+  body.light-theme .overlay {
+      animation: overlayGradientToLight 0.5s forwards; /* Animer til lys gradient */
+  }
+  
+  /* Mørkt tema aktiveres */
+  body:not(.light-theme) .overlay {
+      animation: overlayGradientToDark 0.5s forwards; /* Animer tilbage til mørk gradient */
+  }
 
+  body.light-theme .center-logo img {
+    filter: invert(1); /* Inverterer farven, så det hvide logo bliver sort */
+  }
 
+  body.light-theme .social-icons a img {
+    filter: invert(0); 
+  }
 
+  body.light-theme .btn-primary {
+    color: #000;
+  }
+
+  body.light-theme .btn-secondary {
+    color: #000;
+  }
+
+  body.light-theme .nav-links {
+    filter: invert(1);
+  }
+
+  body.light-theme .promo {
+    filter: invert(1);
+  }
+
+  body.light-theme .btn-explore {
+    filter: invert(1);
+  }
+
+  body.light-theme .gray-text {
+    filter: invert(1);
+  }
+
+  body.light-theme .sub-heading {
+    color: #000;
+  }
+
+  body.light-theme .navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+ /* Google Fonts for håndskriftseffekt */
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+/* Container for teksten og solen */
+.theme-container {
+  position: fixed;
+  bottom: -40px; /* Startposition for solen og teksten */
+  right: 34px;
+  display: flex; /* Brug flexbox */
+  flex-direction: row; /* Stabler teksten og solen lodret */
+  align-items: center; /* Centrér teksten og solen vandret */
+  text-align: center;
+  z-index: 101;
+  transition: bottom 0.5s ease; /* Solen og teksten bevæger sig sammen */
+}
+
+/* Tekst- og pile-containeren over solen */
+.theme-text {
+  position: relative;
+  bottom: 110px; /* Flyt teksten lidt op over solen */
+  font-family: 'Caveat', cursive; /* Håndskrevet skrifttype */
+  color: white; /* Hvid tekst i mørkt tema */
+  font-size: 24px;
+  z-index: 102; /* Sørg for, at teksten vises over solen */
+}
+
+/* Pil nedad */
+.theme-text .arrow {
+  font-size: 20px;
+  color: white;
+  margin-top: -00px; /* Juster for at få pilen tættere på teksten */
+}
+
+/* Ændrer farve i det lyse tema */
+body.light-theme .theme-text {
+  color: black; /* Sort tekst i det lyse tema */
+  right: 10px;
+}
+
+body.light-theme .theme-text .arrow {
+  color: black; /* Sort pil i det lyse tema */
+}
+
+/* Sol-knap */
+.sun {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+  cursor: pointer;
+  z-index: 101; /* Sørg for, at solen er bag teksten */
+}
+
+/* Animation for at hoppe teksten */
+@keyframes hop {
+  0%, 100% {
+    transform: translateY(0); /* Start og slut i samme position */
+  }
+  50% {
+    transform: translateY(-10px); /* Flyt teksten og pilen lidt op */
+  }
+}
+
+/* Hoppe-animation */
+.theme-text {
+  animation: hop 3s ease-in-out infinite; /* Langsommere og større hoppe-effekt */
+}
+
+/* Når vi skifter til lyst tema - Solen og teksten stiger op */
+body.light-theme .theme-container {
+  bottom: 20px; /* Solen og teksten flytter op */
+}
