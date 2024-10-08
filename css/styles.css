@@ -1,4 +1,3 @@
-/* Importing Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
@@ -15,22 +14,30 @@ body {
     background-color: #070707;
     color: #fff;
     overflow-x: hidden;
-    transition: all ease 0.5s;
 }
 
-/* Dark overlay for background image */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6); /* Tint kun på baggrundsbilledet */
     z-index: 1;
-    background-image: 
-    linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgb(7, 6, 6) 80%), /* Gradienten fader til rgb(17, 17, 17) */
-    url('img/header.png'); /* Baggrundsbilledet */
+    background-color: rgba(36, 35, 35, 0.94);
+    transition: all ease 0.5s;
 }
+
+.overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('img/header.png');
+    opacity: 1; /* Initial opacitet */
+}
+
 
 /* Navbar Styles */
 .navbar {
@@ -57,7 +64,7 @@ body {
     list-style: none;
     display: flex;
     font-size: 18px;
-    transition: all ease 1.5s;
+    transition: all ease 0.5s;
 }
 
 
@@ -84,7 +91,7 @@ body {
 .center-logo img {
     height: 140px; /* Behold størrelsen, men vi har reduceret padding */
     filter: none; /* Ingen filter, hvidt logo vises normalt */
-    transition: all ease 1.5s;
+    transition: all ease 0.5s;
 
 }
 
@@ -94,7 +101,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%); /* Centerer symbolet */
     z-index: 1; /* Sørg for, at symbolet er foran baggrundsbilledet, men bag teksten */
-    opacity: 0.1;
+    opacity: 0.5;
 }
 
 /* Størrelse og styling af symbolet */
@@ -123,7 +130,7 @@ body {
     background-color: rgba(114, 20, 20, 0.2); /* Lysere grå gennemsigtig baggrund */
     border-radius: 0; /* Firkantet kanter */
     filter: brightness(0) invert(1); /* Gør ikonerne hvide */
-    transition: all ease 1.5s;
+    transition: all ease 0.5s;
 }
 
 /* Når du hover over ikonerne */
@@ -159,7 +166,7 @@ body {
     height: 100px; /* Ens højde for bedre alignment */
     margin-right: 20px;
     font-size: 18px;
-    transition: all ease 1.5s;
+    transition: all ease 0.5s;
 }
 
 /* Hvid linje under logo, knapper og promo tekst */
@@ -194,7 +201,6 @@ body {
     text-align: center;
     z-index: 2;
     margin-bottom: -100px;
-    transition: all ease 1.5s;
 }
 
 .sub-heading {
@@ -205,7 +211,7 @@ body {
     font-family: 'Outfit', sans-serif;
     font-weight: 300; /* Gør teksten tyndere */
     text-align: center;
-    transition: all ease 1.5s;
+    transition: all ease 0.5s;
 }
 
 .main-heading-front {
@@ -215,7 +221,7 @@ body {
     margin-bottom: 5px; /* Mindsk mellemrummet til teksten nedenunder */
     font-family: 'Bebas Neue', cursive;
     text-align: center; /* Sørger for centreret tekst */
-    transition: all ease 1.5s;
+    transition: all ease 0.5s;
 }
 
 
@@ -235,6 +241,7 @@ body {
     margin-right: auto;
     margin-top: 5px; /* Reducér mellemrum fra hovedoverskriften */
     max-width: 800px; /* Juster bredde for bedre linjebrud */
+    transition: all ease -1s;
 }
 
 
@@ -252,7 +259,7 @@ body {
     margin-right: 15px;
     transition: opacity 0.3s ease;
     justify-content: center;
-    transition: color ease 1s;
+    transition: all ease 0.5s;
 }
 
 .btn-primary {
@@ -378,6 +385,7 @@ body {
     flex-direction: column;
     justify-content: space-between; /* Fordeler tekstens plads jævnt */
     box-sizing: border-box; /* Sikrer, at padding ikke øger containerens bredde */
+    transition: all ease 0.5s;
 }
 
 /* Stil for overskrifter */
@@ -399,10 +407,12 @@ body {
     font-size: 1rem;
     margin-bottom: 15px;
     color: #ccc;
+    transition: color ease 0.5s;
 }
 
 .company-info p strong {
     color: #fff;
+    transition: color ease 0.5s;
 }
 
 /* Kontaktformular */
@@ -412,6 +422,7 @@ body {
     color: #ccc;
     font-family: 'Outfit', sans-serif;
     font-size: 0.9rem;
+    transition: color ease 0.5s;
 }
 
 .contact-form input, .contact-form textarea {
@@ -423,6 +434,7 @@ body {
     border-radius: 5px;
     color: #fff;
     font-family: 'Outfit', sans-serif;
+    transition: all ease 0.5s;
 }
 
 .contact-form input:focus, .contact-form textarea:focus {
@@ -476,13 +488,14 @@ footer {
 
 /* Gør "MÅLTIDSKASSER" grå */
 .gray-text {
-    color: rgb(167, 165, 165); /* Sætter farven til grå */
-    transition: all ease 1.5s;
+    color:#747474; /* Sætter farven til grå */
+    transition: all ease 0.5s;
 }
 
 .meal-boxes .main-title {
     font-family: 'Bebas Neue', cursive;
     font-size: 5rem;
+    transition: color ease 0.5s;
 }
 
 .boxes-container {
@@ -619,6 +632,7 @@ footer {
     font-family: 'Bebas Neue', cursive;
     font-size: 4rem;
     margin-bottom: 50px;
+    transition: color ease 0.5s;
 }
 
 /* Produktboksene */
@@ -650,6 +664,7 @@ footer {
     font-size: 1.5rem;
     margin-top: 15px;
     color: #fff;
+    transition: all ease 0.5s;
 }
 
 .category-box p {
@@ -673,7 +688,7 @@ footer {
     font-family: 'Bebas Neue', cursive;
     font-size: 1.2rem;
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    transition: all ease 0.5s;
 }
 
 .explore-meals .btn-explore:hover {
@@ -721,6 +736,7 @@ footer {
     color: #b30202;
     margin-bottom: 10px;
     font-weight: 200;
+    transition: color ease 0.5s;
 }
 
 .main-title {
@@ -729,6 +745,7 @@ footer {
     color: #fff;
     line-height: 1.2;
     margin-bottom: 20px;
+    transition: color ease 0.5s;
 }
 
 .tradition-text p {
@@ -737,6 +754,7 @@ footer {
     line-height: 1.6;
     color: #ccc;
     margin-bottom: 20px;
+    transition: color ease 0.5s;
 }
 
 /* Plans Section */
@@ -751,13 +769,12 @@ footer {
     font-size: 1.4rem;
     color: #b30202;
     margin-bottom: 10px;
-    transition: all ease 1.5s;
+    transition: all ease 0.5s;
 }
 
 .main-title {
     font-size: 5rem;
     font-family: 'Bebas Neue', cursive;
-    transition: all ease 1.5s;
 }
 
 /* General Styles */
@@ -771,6 +788,7 @@ body {
     font-family: 'Outfit', sans-serif;
     background-color: rgb(7, 6, 6);
     color: #fff;
+    transition: all ease 0.5s;
 }
 
 
@@ -778,6 +796,7 @@ body {
     font-size: 1.4rem;
     color: #b30202;
     margin-bottom: 10px;
+    transition: all ease 0.5s;
 }
 
 .main-title {
@@ -1076,7 +1095,6 @@ body {
 }
 
 
-
 .background-gradient-3 {
     background: linear-gradient(
         to bottom,
@@ -1084,7 +1102,7 @@ body {
         rgba(70, 70, 70, 0.2) 25%,    /* Svag grå nuance på toppen */
         rgba(90, 90, 90, 0.3) 50%,    /* Grå midte */
         rgba(70, 70, 70, 0.2) 75%,    /* Svag grå i bunden */
-        rgba(7, 6, 6, 0) 100%         /* Gennemsigtig slutning */
+        rgba(7, 6, 6, 0) 5%         /* Gennemsigtig slutning */
     );
 }
 
@@ -1118,10 +1136,12 @@ body {
     padding: 50px 20px;
     color: #fff;
     background-color: rgb(45, 45, 45);
+    transition: all ease 0.5s;
 }
 
 .testimonials-section h1 {
     margin-bottom: 30px;
+    transition: color ease 0.5s;
 }
 
 /* Testimonial slider */
@@ -1150,6 +1170,7 @@ body {
     font-size: 1.2rem;
     color: #ccc;
     margin-bottom: 20px;
+    transition: all ease 0.5s;
 }
 
 .stars {
@@ -1161,6 +1182,7 @@ body {
     font-weight: bold;
     color: #ccc;
     font-size: 1rem;
+    transition: all ease 0.5s;
 }
 
 /* Slider dots */
@@ -1345,30 +1367,22 @@ body.light-theme h6
 }
   
 /* Lyst tema - Skift gradienten */
-@keyframes overlayGradientToLight {
-    from {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgb(7, 6, 6) 80%), url('img/header.png'); /* Mørk gradient */
-    }
-    to {
-      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.527) 5%, rgba(255, 255, 255, 0.8) 80%), url('img/header.png'); /* Lys gradient */
-    }
-  }
+
   
-  /* Skift tilbage til mørk gradient */
-  @keyframes overlayGradientToDark {
-    from {
-      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0.8) 80%), url('img/header.png'); /* Lys gradient */
-    }
-    to {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgb(7, 6, 6) 80%), url('img/header.png'); /* Mørk gradient */
-    }
-  }
-  
-  /* Lyst tema aktiveres */
-  body.light-theme .overlay {
-    background-image: 
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.527) 5%, rgb(210, 210, 210) 90%), /* Gradienten fader til rgb(255, 255, 255, 0.8)  */
-    url('img/header.png'); /* Baggrundsbilledet */
+body.light-theme .overlay {
+    background-color: rgba(255, 255, 255, 0.9); /* Lys tilstand */
+}
+
+body.light-theme .slider-dots .dot{
+    background-color: #555454;
+}
+
+body.light-theme .slider-dots .dot.active{
+    background-color: #f32f2f;
+}
+
+body.light-theme .overlay::after {
+    opacity: 1; 
 }
   
 
