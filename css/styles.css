@@ -151,7 +151,7 @@ body {
     width: 0.5px; /* Tykkelse af linjen */
     height: 200px; /* Længden på den lodrette linje */
     background-color: rgba(255, 255, 255, 0.5); /* Grå gennemsigtig linje */
-    
+    transition: all ease 0.5s;
 }
 
 
@@ -759,7 +759,7 @@ footer {
 
 /* Plans Section */
 .meal-boxes {
-    margin: 150px auto;
+    margin-top: 150px;
     text-align: center;
     color: #fff;
 }
@@ -1213,19 +1213,17 @@ body {
 
 #tilToppenKnappen {
     position: fixed;
-    bottom: 20px;
-    left: 30px;
-    z-index: 2000; /* Sørg for, at knappen er over overlayet */
-    width: 50px;
-    height: 50px;
-    border: 2px solid red;
-    background-color: transparent;
-    color: red;
-    font-size: 36px;
-    font-weight: bolder;
-    text-align: center;
-    line-height: 58px;
-    border-radius: 50%;
+    bottom: 4vh;
+    left: 2vw;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1); /* Gennemsigtig baggrund */
+    border: 4px solid rgba(255, 255, 255, 0.4); /* Hvid kant */
+    border-radius: 50%; /* Afrundede kanter */
     cursor: pointer;
     opacity: 0; /* Start skjult */
     pointer-events: none;
@@ -1237,7 +1235,6 @@ body {
     background-color: rgba(255, 255, 255, 0.2); /* Lysere baggrund ved hover */
     border-color: rgba(255, 255, 255, 0.6); /* Lysere kant ved hover */
 }
-
 /* Chevron-pil */
 #tilToppenKnappen::before,
 #tilToppenKnappen::after {
@@ -1291,20 +1288,10 @@ body {
 }
 
 
-
 #tilToppenKnappen.scrolled {
     opacity: 1;
     pointer-events: auto;
 }
-
-
-
-
-
-
-
-
-
 
   
   body {
@@ -1443,6 +1430,10 @@ body.light-theme .overlay::after {
     background-color: rgba(255, 255, 255, 0.7);
   }
 
+  body.light-theme .social-icons::before {
+    background-color: #5f5c5c;
+  }
+
   body.light-theme .contact-form {
     background-color: #a3a3a3;
   }
@@ -1462,6 +1453,20 @@ body.light-theme .overlay::after {
   body.light-theme  .company-info p strong {
     color: #1a1a1a
   }
+
+  body.light-theme .continue-btn {
+    color: #000;
+    background-color: transparent;
+    border-color: black;
+  }
+
+  body.light-theme .continue-btn:hover {
+    background-color: #f32f2f;
+  }
+
+  .continue-btn:hover {
+    background-color: #f32f2f;
+}
 
   body.light-theme  .company-info p {
     color: #595959
@@ -1579,6 +1584,7 @@ body.light-theme .theme-container {
     align-items: center;       /* Centrér vertikalt */
     margin-top: 20px;
     text-align: center;
+    margin-bottom: 1px;
 }
 
 .continue-btn {
@@ -1593,6 +1599,7 @@ body.light-theme .theme-container {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Glatte overgange */
     margin-top: 30px; /* Gør knapperne på alle bokse ens */
     text-align: center; /* Centrér tekst */
+    transition: all ease 0.5s;
 }
 
 .continue-btn:hover {
