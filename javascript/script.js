@@ -8,18 +8,64 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     this.reset();
 });
 
-// JavaScript for at ændre baggrundsfarve på navbar ved scroll
-window.addEventListener('scroll', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
-    const topdivider = this.document.querySelector('.top-divider');
-    if (window.scrollY > 1) { // Tjek om vi har scrollet mere end 50px
-        navbar.classList.add('scrolled');
-        topdivider.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-        topdivider.classList.remove('scrolled');
-    }
+    const topdivider = document.querySelector('.top-divider');
+    const tilToppenKnappen = document.getElementById('tilToppenKnappen');
+
+    // Opret progress-ring som SVG
+    const progressRing = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    progressRing.setAttribute("class", "progress-ring");
+    progressRing.setAttribute("width", "60");
+    progressRing.setAttribute("height", "60");
+
+    const progressCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    progressCircle.setAttribute("class", "progress-ring__circle");
+    progressCircle.setAttribute("cx", "30");
+    progressCircle.setAttribute("cy", "30");
+    progressCircle.setAttribute("r", "28");
+    progressRing.appendChild(progressCircle);
+    tilToppenKnappen.appendChild(progressRing);
+
+    // Beregn cirklens omkreds for korrekt fyld
+    const radius = progressCircle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    // Sæt strokeDasharray og strokeDashoffset
+    progressCircle.style.strokeDasharray = `${circumference}`;
+    progressCircle.style.strokeDashoffset = `${circumference}`;
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = scrollTop / docHeight;
+
+        // Beregn det nye offset baseret på scroll-procent
+        const offset = circumference - scrollPercent * circumference;
+        progressCircle.style.strokeDashoffset = offset;
+
+        // Skift synlighed afhængig af scroll-position for navbar og tilToppenKnappen
+        if (scrollTop > 20) {
+            navbar?.classList.add('scrolled');
+            topdivider?.classList.add('scrolled');
+            tilToppenKnappen.classList.add('scrolled');
+        } else {
+            navbar?.classList.remove('scrolled');
+            topdivider?.classList.remove('scrolled');
+            tilToppenKnappen.classList.remove('scrolled');
+        }
+    });
+
+    // Scroll til toppen når knappen klikkes
+    tilToppenKnappen.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 });
+
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const toggle = document.querySelector('.toggle');
