@@ -15,6 +15,7 @@ body {
     background-color: #070707;
     color: #fff;
     overflow-x: hidden;
+    transition: all ease 0.5s;
 }
 
 /* Dark overlay for background image */
@@ -56,12 +57,9 @@ body {
     list-style: none;
     display: flex;
     font-size: 18px;
+    transition: all ease 1.5s;
 }
 
-
-.nav-links a {
-    transition: opacity 0.3s ease;
-}
 
 .nav-links a:hover {
     opacity: 0.8;
@@ -86,6 +84,7 @@ body {
 .center-logo img {
     height: 140px; /* Behold størrelsen, men vi har reduceret padding */
     filter: none; /* Ingen filter, hvidt logo vises normalt */
+    transition: all ease 1.5s;
 
 }
 
@@ -124,7 +123,7 @@ body {
     background-color: rgba(114, 20, 20, 0.2); /* Lysere grå gennemsigtig baggrund */
     border-radius: 0; /* Firkantet kanter */
     filter: brightness(0) invert(1); /* Gør ikonerne hvide */
-    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    transition: all ease 1.5s;
 }
 
 /* Når du hover over ikonerne */
@@ -132,6 +131,7 @@ body {
     transform: scale(1.1); /* Lidt større ved hover */
     border-color: rgba(92, 30, 30, 0.8); /* Gør rammen mindre gennemsigtig ved hover */
     background-color: rgba(200, 200, 200, 0.3); /* Gør baggrunden lidt mindre gennemsigtig ved hover */
+    transition: transform ease 0.1s;
 }
 
 /* Lodret linje over symbolerne */
@@ -159,6 +159,7 @@ body {
     height: 100px; /* Ens højde for bedre alignment */
     margin-right: 20px;
     font-size: 18px;
+    transition: all ease 1.5s;
 }
 
 /* Hvid linje under logo, knapper og promo tekst */
@@ -193,6 +194,7 @@ body {
     text-align: center;
     z-index: 2;
     margin-bottom: -100px;
+    transition: all ease 1.5s;
 }
 
 .sub-heading {
@@ -203,16 +205,17 @@ body {
     font-family: 'Outfit', sans-serif;
     font-weight: 300; /* Gør teksten tyndere */
     text-align: center;
-   
+    transition: all ease 1.5s;
 }
 
-.main-heading {
+.main-heading-front {
     font-size: 13rem;
     color: white;
     margin-top: 0px; /* Reducér mellemrummet op til subheading */
     margin-bottom: 5px; /* Mindsk mellemrummet til teksten nedenunder */
     font-family: 'Bebas Neue', cursive;
     text-align: center; /* Sørger for centreret tekst */
+    transition: all ease 1.5s;
 }
 
 
@@ -249,6 +252,7 @@ body {
     margin-right: 15px;
     transition: opacity 0.3s ease;
     justify-content: center;
+    transition: color ease 1s;
 }
 
 .btn-primary {
@@ -353,28 +357,40 @@ body {
     background-color: #1d1d1d;
     color: #fff;
     text-align: center;
+    position: relative;
+    padding-top: 200px;
 }
 
 .contact-container {
     display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 200px; /* Afstand mellem company-info og contact-form */
+    justify-content: center;
 }
 
 .company-info, .contact-form {
-    background-color: #2b2b2b;
+    background-color: #222020;
     padding: 30px;
     border-radius: 10px;
-    width: 45%;
+    width: 35%;
     text-align: left;
+    margin-top: 20px; /* Skaber ekstra plads mellem titlen og containeren */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Fordeler tekstens plads jævnt */
+    box-sizing: border-box; /* Sikrer, at padding ikke øger containerens bredde */
 }
 
 /* Stil for overskrifter */
-.contact-section h2, .company-info h3, .contact-form h3 {
+.company-info h3, .contact-form h3 {
     font-family: 'Bebas Neue', cursive;
     font-size: 2rem;
     color: #f32f2f;
+    margin-top: 20px; /* Giver ekstra afstand til containerne nedenfor */
+    margin-bottom: 20px;
+}
+
+.company-info h2 {
+    padding-top: 500px;
 }
 
 /* Kontaktinfo */
@@ -445,6 +461,7 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #000;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%); /* Fra gennemsigtig til mørkere */
 }
 
 
@@ -460,6 +477,7 @@ footer {
 /* Gør "MÅLTIDSKASSER" grå */
 .gray-text {
     color: rgb(167, 165, 165); /* Sætter farven til grå */
+    transition: all ease 1.5s;
 }
 
 .meal-boxes .main-title {
@@ -594,6 +612,7 @@ footer {
     color: #b30202;
     margin-bottom: 10px;
     font-weight: 200;
+    transition: all ease 0.5s;
 }
 
 .explore-meals .main-title {
@@ -616,7 +635,7 @@ footer {
     border-radius: 10px;
     width: 250px; /* Fast bredde */
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: all ease 0.5s;
 }
 
 .category-box img {
@@ -732,11 +751,13 @@ footer {
     font-size: 1.4rem;
     color: #b30202;
     margin-bottom: 10px;
+    transition: all ease 1.5s;
 }
 
 .main-title {
     font-size: 5rem;
     font-family: 'Bebas Neue', cursive;
+    transition: all ease 1.5s;
 }
 
 /* General Styles */
@@ -1096,6 +1117,7 @@ body {
     text-align: center;
     padding: 50px 20px;
     color: #fff;
+    background-color: rgb(45, 45, 45);
 }
 
 .testimonials-section h1 {
@@ -1265,7 +1287,6 @@ body {
   body {
     background-color: #1a1a1a;
     color: white;
-    transition: background-color 0.5s ease, color 0.5s ease;
   }
   
   /* Lyst tema */
@@ -1278,7 +1299,6 @@ body {
 body {
     background-color: #1a1a1a;
     color: white;
-    transition: background-color 0.5s ease, color 0.5s ease;
   }
   
   /* Lyst tema */
@@ -1346,20 +1366,18 @@ body.light-theme h6
   
   /* Lyst tema aktiveres */
   body.light-theme .overlay {
-      animation: overlayGradientToLight 0.5s forwards; /* Animer til lys gradient */
-  }
+    background-image: 
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.527) 5%, rgb(210, 210, 210) 90%), /* Gradienten fader til rgb(255, 255, 255, 0.8)  */
+    url('img/header.png'); /* Baggrundsbilledet */
+}
   
-  /* Mørkt tema aktiveres */
-  body:not(.light-theme) .overlay {
-      animation: overlayGradientToDark 0.5s forwards; /* Animer tilbage til mørk gradient */
-  }
 
   body.light-theme .center-logo img {
     filter: invert(1); /* Inverterer farven, så det hvide logo bliver sort */
   }
 
   body.light-theme .social-icons a img {
-    filter: invert(0); 
+    filter: brightness(0) invert(0); /* Gør ikonerne hvide */
   }
 
   body.light-theme .btn-primary {
@@ -1367,7 +1385,7 @@ body.light-theme h6
   }
 
   body.light-theme .tradition-text p {
-    color: #000;
+    color: #2b2b2b;
   }
 
   body.light-theme .btn-secondary {
@@ -1378,12 +1396,24 @@ body.light-theme h6
     filter: invert(1);
   }
 
+  body.light-theme .category-box {
+    background-color: #908d8d;
+  }
+
   body.light-theme .promo {
     filter: invert(1);
   }
 
+  body.light-theme .testimonial blockquote, body.light-theme .reviewer {
+    color:rgb(57, 57, 57);
+  }
+
   body.light-theme .btn-explore {
     filter: invert(1);
+  }
+
+  body.light-theme .testimonials-section {
+    background-color: #e6e3e3;
   }
 
   body.light-theme .gray-text {
@@ -1397,7 +1427,35 @@ body.light-theme h6
   body.light-theme .navbar.scrolled {
     background-color: rgba(255, 255, 255, 0.7);
   }
-  
+
+  body.light-theme .contact-form {
+    background-color: #a3a3a3;
+  }
+
+  body.light-theme .company-info {
+    background-color: #a3a3a3;
+  }
+
+  body.light-theme .contact-form input {
+    background-color: rgb(203, 203, 203);
+  }
+
+  body.light-theme .contact-form textarea {
+    background-color: rgb(203, 203, 203);
+  }
+
+  body.light-theme  .company-info p strong {
+    color: #1a1a1a
+  }
+
+  body.light-theme  .company-info p {
+    color: #595959
+  }
+
+  body.light-theme  .contact-form label {
+    color: #1a1a1a;
+  }
+
 
  /* Google Fonts for håndskriftseffekt */
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
@@ -1451,16 +1509,17 @@ body.light-theme .theme-text .arrow {
   box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
   cursor: pointer;
   z-index: 101; /* Sørg for, at solen er bag teksten */
+  transition: bottom 0.5s ease; /* Solen og teksten bevæger sig sammen */
 }
 
 /* Animation for at hoppe teksten */
 @keyframes hop {
-  0%, 100% {
-    transform: translateY(0); /* Start og slut i samme position */
-  }
-  50% {
-    transform: translateY(-10px); /* Flyt teksten og pilen lidt op */
-  }
+    0%, 100% {
+        transform: translateY(0); /* Start og slut i samme position */
+    }
+    50% {
+        transform: translateY(-10px); /* Flyt teksten og pilen lidt op */
+    }
 }
 
 /* Hoppe-animation */
@@ -1472,3 +1531,4 @@ body.light-theme .theme-text .arrow {
 body.light-theme .theme-container {
   bottom: 20px; /* Solen og teksten flytter op */
 }
+
